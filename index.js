@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server is running on port ${PORT}`);
 });
-/*
+
 const { TwitterApi } = require("twitter-api-v2");
 const clientTwitter = new TwitterApi({
   appKey: "CTYsAb9kXYGngROP4Zs4UZwmN",
@@ -25,6 +25,7 @@ async function tweet() {
     text: "day "+ day,
     media: { media_ids: [insaneTienEdit] },
   });
+  console.log("tweet numero "+day);
 }
 
 const max = 72000000 // 20h
@@ -42,4 +43,4 @@ setInterval(() => {
 
     heureRandom = (Math.floor(Math.random()*(max-min))+min);
 }, heureRandom);
-tweet();*/
+tweet();
