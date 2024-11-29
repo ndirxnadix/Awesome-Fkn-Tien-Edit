@@ -1,3 +1,8 @@
+const express = require('express');
+const app = express();
+
+const PORT = process.env.PORT || 5000;
+
 const { TwitterApi } = require("twitter-api-v2");
 const clientTwitter = new TwitterApi({
   appKey: "CTYsAb9kXYGngROP4Zs4UZwmN",
