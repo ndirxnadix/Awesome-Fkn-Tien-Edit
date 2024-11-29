@@ -10,9 +10,9 @@ COPY package*.json ./
 # Install the application dependencies
 RUN npm install
 
-ENV PORT 8080
+ENV PORT 3000
 
-EXPOSE 8080
+EXPOSE 3000
 
 # Define the entry point for the container
 CMD ["node", "index.js"]

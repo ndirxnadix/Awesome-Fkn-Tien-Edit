@@ -31,5 +31,3 @@ setInterval(() => {
     heureRandom = (Math.floor(Math.random()*(max-min))+min);
 }, heureRandom);
 tweet();
-
-
