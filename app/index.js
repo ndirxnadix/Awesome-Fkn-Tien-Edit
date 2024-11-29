@@ -20,7 +20,7 @@ const clientTwitter = new TwitterApi({
 
 let day = 1;
 async function tweet() {
-  const insaneTienEdit = await clientTwitter.v1.uploadMedia("./Awesome Fkn Tien Edit.mp4");
+  const insaneTienEdit = await clientTwitter.v1.uploadMedia("../Awesome Fkn Tien Edit.mp4");
   let resultat = await clientTwitter.v2.tweet({
     text: "day "+ day,
     media: { media_ids: [insaneTienEdit] },
