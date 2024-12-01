@@ -44,8 +44,5 @@ setInterval(() => {
 
     heureRandom = (Math.floor(Math.random()*(max-min))+min);
 }, heureRandom);
-try {
-  tweet();
-} catch (error) {
-  console.log("cool erreur");
-}
+
+//tweet();
