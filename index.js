@@ -12,10 +12,10 @@ app.listen(port, () => {
 
 const { TwitterApi } = require("twitter-api-v2");
 const clientTwitter = new TwitterApi({
-  appKey: "CTYsAb9kXYGngROP4Zs4UZwmN",
-  appSecret: "FnyyvXzMTqA4mbGYhalbsmtz7Xl4gFsmDQz3JmJRawWnSkBSNu",
-  accessToken: "1862467965691494400-bzKBFvYuLau1rgrGdUjhEH528R5XSO",
-  accessSecret: "0pwzXPzGtefpNEkk8aY0SG8NALFACx9LoqczhANmJUeaX",
+  appKey: "2UShxdE1jbV7kttRsOTi5s3Kn",
+  appSecret: "itwLgrYK7GamNQSL3L6YZxxEJyTv01l3iZrH1lw7C2hPbEs7MZ",
+  accessToken: "1863253024212152320-IHF5VpBeMDuB26fLQpwUM8YWJah8Rd",
+  accessSecret: "F4LMnXNADBufl62VMi4NHR15mXNp1Y9nKA7Fd3wPCBIEV",
 });
 
 let day = 1;
@@ -26,11 +26,10 @@ async function tweet() {
     media: { media_ids: [insaneTienEdit] },
   });
   console.log("tweet numero "+day+" envoyé");
-  console.log("prochain tweet dans "+(heureRandom/1000/60)+"min");
 }
 
-const max = 36000000 // 10h
-const min = 21600000 // 6h
+const max = 10800000 // 3h
+const min = 7200000 // 2h
 let heureRandom = (Math.floor(Math.random()*(max-min))+min)
 //let jourDepart = new Date().getUTCDate();
 
@@ -43,6 +42,7 @@ setInterval(() => {
     //}
 
     heureRandom = (Math.floor(Math.random()*(max-min))+min);
+    console.log("prochain tweet dans "+(heureRandom/1000/3600)+" heures");
 }, heureRandom);
 
 tweet();
