@@ -1,3 +1,15 @@
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+  res.send('test')
+})
+
+app.listen(port, () => {
+  console.log(`dans le port : ${port}`)
+})
+
 const { TwitterApi } = require("twitter-api-v2");
 const clientTwitter = new TwitterApi({
   appKey: "CTYsAb9kXYGngROP4Zs4UZwmN",
@@ -16,8 +28,8 @@ async function tweet() {
   console.log("tweet numero "+day);
 }
 
-const max = 72000000 // 20h
-const min = 25200000 // 7h
+const max = 72000//000 // 20h
+const min = 25200//000 // 7h
 let heureRandom = (Math.floor(Math.random()*(max-min))+min)
 let jourDepart = new Date().getUTCDate();
 
@@ -32,4 +44,4 @@ setInterval(() => {
     heureRandom = (Math.floor(Math.random()*(max-min))+min);
 }, heureRandom);
 tweet();
-console.log((day+1)+"eme tweet dans "+(heureRandom/1000/3600));
+console.log((day+1)+"eme tweet dans "+(heureRandom/1000/3600)+"h");
