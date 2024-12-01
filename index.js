@@ -29,8 +29,8 @@ async function tweet() {
   console.log("prochain tweet dans "+(heureRandom/1000/60)+"min");
 }
 
-const max = 18000000 // 5h
-const min = 10800000 // 3h
+const max = 36000000 // 10h
+const min = 21600000 // 6h
 let heureRandom = (Math.floor(Math.random()*(max-min))+min)
 //let jourDepart = new Date().getUTCDate();
 
@@ -45,4 +45,4 @@ setInterval(() => {
     heureRandom = (Math.floor(Math.random()*(max-min))+min);
 }, heureRandom);
 
-//tweet();
+tweet();
