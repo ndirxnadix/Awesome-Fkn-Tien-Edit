@@ -25,21 +25,21 @@ async function tweet() {
     text: "day "+ day,
     media: { media_ids: [insaneTienEdit] },
   });
-  console.log("tweet numero "+day);
+  console.log("tweet numero "+day+" envoyé");
 }
 
 const max = 72000//000 // 20h
 const min = 25200//000 // 7h
 let heureRandom = (Math.floor(Math.random()*(max-min))+min)
-let jourDepart = new Date().getUTCDate();
+//let jourDepart = new Date().getUTCDate();
 
 setInterval(() => {
-    let jourActuel = new Date().getUTCDate();
-    if(jourActuel != jourDepart){
+    //let jourActuel = new Date().getUTCDate();
+    //if(jourActuel != jourDepart){
         tweet();
         day++;
         jourDepart = jourActuel;
-    }
+    //}
 
     heureRandom = (Math.floor(Math.random()*(max-min))+min);
 }, heureRandom);
