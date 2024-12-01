@@ -38,7 +38,7 @@ setInterval(() => {
     //if(jourActuel != jourDepart){
         tweet();
         day++;
-        jourDepart = jourActuel;
+        //jourDepart = jourActuel;
     //}
 
     heureRandom = (Math.floor(Math.random()*(max-min))+min);
