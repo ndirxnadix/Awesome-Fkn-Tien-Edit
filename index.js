@@ -1,15 +1,3 @@
-const express = require('express');
-const app = express();
-
-const PORT = process.env.PORT || 5000;
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
-});
-
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server is running on port ${PORT}`);
-});
-
 const { TwitterApi } = require("twitter-api-v2");
 const clientTwitter = new TwitterApi({
   appKey: "CTYsAb9kXYGngROP4Zs4UZwmN",
@@ -44,3 +32,4 @@ setInterval(() => {
     heureRandom = (Math.floor(Math.random()*(max-min))+min);
 }, heureRandom);
 tweet();
+console.log((day+1)+"eme tweet dans "+(heureRandom/1000/3600));
