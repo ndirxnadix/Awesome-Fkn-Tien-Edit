@@ -22,10 +22,11 @@ let day = 1;
 async function tweet() {
   const insaneTienEdit = await clientTwitter.v1.uploadMedia("./Awesome Fkn Tien Edit.mp4");
   let resultat = await clientTwitter.v2.tweet({
-    text: "day "+ day,
+    text: "edit number "+ day,
     media: { media_ids: [insaneTienEdit] },
   });
   console.log("tweet numero "+day+" envoyé");
+  console.log("prochain tweet dans "+(heureRandom/1000/60)+"min");
 }
 
 const max = 72000//000 // 20h
@@ -44,4 +45,3 @@ setInterval(() => {
     heureRandom = (Math.floor(Math.random()*(max-min))+min);
 }, heureRandom);
 tweet();
-console.log((day+1)+"eme tweet dans "+(heureRandom/1000/3600)+"h");
