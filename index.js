@@ -22,15 +22,15 @@ let day = 1;
 async function tweet() {
   const insaneTienEdit = await clientTwitter.v1.uploadMedia("./Awesome Fkn Tien Edit.mp4");
   let resultat = await clientTwitter.v2.tweet({
-    text: "edit number "+ day,
+    text: "edit "+ day,
     media: { media_ids: [insaneTienEdit] },
   });
   console.log("tweet numero "+day+" envoyé");
   console.log("prochain tweet dans "+(heureRandom/1000/60)+"min");
 }
 
-const max = 72000//000 // 20h
-const min = 25200//000 // 7h
+const max = 18000000 // 5h
+const min = 10800000 // 3h
 let heureRandom = (Math.floor(Math.random()*(max-min))+min)
 //let jourDepart = new Date().getUTCDate();
 
